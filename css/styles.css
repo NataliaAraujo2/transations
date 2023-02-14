@@ -1,5 +1,6 @@
 :root {
   --cblue: #058ce1;
+  --ctblue: #94caeb;
   --cwhite: #fff;
   --corange: #f7941e;
   --ctorange: #f8b768;
@@ -8,11 +9,15 @@
 
 .navbar-brand img {
   width: 100px;
+  margin-left: 5px;
 }
 
-#main-title {
+.main-title {
   text-align: center;
   font-size: 14px;
+  font-weight: bolder;
+  background-color: none;
+  padding: 5px 5px 5px 5px;
 }
 
 /*HOME*/
@@ -24,10 +29,6 @@
 #movements-table thead {
   color: var(--cwhite);
   background-color: var(--cblue);
-}
-
-.view-detail {
-  max-width: 10ch;
 }
 
 .actions {
@@ -74,10 +75,85 @@
 }
 
 /*SHOW*/
-
-.view-person {
-display:grid;
-grid-template-columns: 100px 200px 500px;
+.transation {
+  padding: 5px 0px 0px 0px;
+}
+.show-main-title {
+  display: grid;
+  font-size: 30px;
+  border: 1px solid var(--cborange);
+  background-color: var(--corange);
+  height: 40px;
+  padding: 0px 3px;
 }
 
+.show-container {
+  display: flex;
+  flex-direction: row;
+  padding: 3px 3px 3px 3px;
+  border-top: 1px solid var(--cblue);
+  border-left: 1px solid var(--cblue);
+  border-right: 1px solid var(--cblue);
+  background-color: var(--ctblue);
+  margin-left: 4px;
+  margin-right: 4px;
+  justify-content: space-around;
+}
 
+.trasation-data {
+  border-top: none;
+  border-bottom: 1px solid var(--cblue);
+  border-left: 1px solid var(--cblue);
+  border-right: 1px solid var(--cblue);
+}
+
+.show-transation-type {
+  padding: 0px 50px 0px 0px;
+}
+
+.show-transation-date {
+  padding: 0px 50px 0px 0px;
+}
+
+.transation-details {
+  display: flex;
+  flex-direction: column;
+  margin-left: 4px;
+  margin-right: 4px;
+  border-left: 1px solid var(--cblue);
+  border-right: 1px solid var(--cblue);
+  border-bottom: 1px solid var(--cblue);
+  padding: 5px 5px 5px  5px;
+  word-wrap:normal;
+}
+
+.show-transation-detail {
+  font-weight: bolder;
+  text-align: center;
+  font-size: 14px;
+}
+
+.transaction-description label {
+  word-wrap:  break-word;
+  text-align: justify;
+}
+
+.backbtn {
+  display: flex;
+  flex-direction: column;
+  margin-left: 4px;
+  margin-right: 4px;
+  border-left: 1px solid var(--cblue);
+  border-right: 1px solid var(--cblue);
+  border-bottom: 1px solid var(--cblue);
+  padding: 5px 5px 5px  5px;
+  font-weight: bolder;
+  text-align:end;
+}
+/*Criar Dados*/
+
+#create-form,
+#edit-form {
+  max-width: 1000px;
+  margin: 0;
+}

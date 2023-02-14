@@ -3,7 +3,7 @@ include_once("config/url.php");
 include_once("config/process.php");
 
 if (isset($_SESSION['msg'])) {
-    $printMsg = $_SESSIOM['msg'];
+    $printMsg = $_SESSION['msg'];
     $_SESSION['msg'] = '';
 }
 ?>
@@ -36,6 +36,7 @@ if (isset($_SESSION['msg'])) {
                         Atípicas</a>
                     <a href="<?= $BASE_URL ?>create.php" class="nav-link active" id="home-link">Cadastrar Nova
                         Transação</a>
+                    
                 </div>
 
         </nav>

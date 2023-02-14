@@ -13,83 +13,95 @@ include_once("components/functions/functions.php")
         <?php
     endif;
     ?>
-    <div class="container" id="view-movements-container">
-        <div class="container-items">
-            <div class="view-person">
-                <div class="person-type">
-                    <label>
-                        <?php
-                        if ($movements["person_type"] == "1"):
-                            ?>
-                            Pessoa Física
-                        <?php else: ?>
-                            Pessoa Jurídica
-                            <?php
-                        endif;
-                        ?>
-                    </label>
-                </div>
-                <div class="person-document">
-                    <label>
-                        <?php
-                        if ($movements["person_type"] == "1"):
-                            ?>
-                            CPF:
-                        <?php else: ?>
-                            CNPJ:
-                            <?php
-                        endif;
-                        ?>
-                    </label>
-                    <label>
-                        <?php
-                        if ($movements["person_type"] == "1"):
-                            ?>
-                            <?php
-                            $cpf = $movements["cpf_cnpj"];
-                            echo mask($cpf, "###.###.###-##");
-                            ?>
-                        <?php else: ?>
-                            <?php
-                            $cnpj = $movements["cpf_cnpj"];
-                            echo mask($cnpj, "##.###.###/####-##");
-                            ?>
-                            <?php
-                        endif;
-                        ?>
-                    </label>
-                </div>
-                <div class="person-name">
-                    <label>Nome:</label>
-                    <label class="person-name">
-                        <?= $movements["name"] ?>
-                    </label>
-                </div>
-            </div>
-            <div class="view-transation">
-                <div class="transation-type">
-                <label>Tipo de Transação:</label>
-                <label>
-                    <?= $movements["transation"] ?>
-                </label>
-                </div>
-                <div class="transation-date">
-                    <label>Data:</label>
-                    <label><?= $movements["transation_date"] ?></label>
-                </div>
-                <div class="transation-value">
-                    <label>
-                    <?php
-                            $moneyValue = $movements["transation_value"];
-                            echo "R$" . " " . number_format($moneyValue, 2, ",", ".");
-                            ?>
-                    </label>
-                </div>
-            </div>
-        </div>
+</div>
+<div class="transation">
+    <h1 class="show-main-title">ID:
+        <?= $movements["id"] ?>
+        <?php
+        if ($movements["person_type"] == "1"):
+            ?>
+            PESSOA FÍSICA
+        <?php else: ?>
+            PESSOA JURÍDICA
+            <?php
+        endif;
+        ?>
+</div>
+<h1 class="main-title">DADOS DO CLIENTE</h1>
+<div class="show-container">
+
+    <div class="show-document">
+        <label>CPF:
+            <?php
+            if ($movements["person_type"] == "1"):
+                ?>
+                <?php
+                $cpf = $movements["cpf_cnpj"];
+                echo mask($cpf, "###.###.###-##");
+                ?>
+            <?php else: ?>
+                <?php
+                $cnpj = $movements["cpf_cnpj"];
+                echo mask($cnpj, "##.###.###/####-##");
+                ?>
+                <?php
+            endif;
+            ?>
+        </label>
+    </div>
+    <div class="show-name">
+        <label>Nome:
+            <?= $movements["name"] ?>
+        </label>
+    </div>
+    <div class="show-agência">
+        <label>Agência:
+            XXXX
+        </label>
+    </div>
+    <div class="show-conta">
+        <label>Nº da Conta:
+            XXXXXXXXXXXXXX
+        </label>
+    </div>
+    <div class="show-op">
+        <label>Operação:
+            XX
+        </label>
     </div>
 </div>
+<div class="show-container trasation-data">
+    <div class="show-transation-type">
+        <label>Tipo da Movimentação:
+            <?= $movements["transation"] ?>
+        </label>
+    </div>
+    <div class="show-transation-date">
+        <label>Data:
+        </label>
+    </div>
+    <div class="show-transation-value">
+        <label>Valor Movimentado:
+            <?php
+            $moneyValue = $movements["transation_value"];
+            echo "R$" . " " . number_format($moneyValue, 2, ",", ".");
+            ?>
+        </label>
+    </div>
 </div>
+<div class="transation-details ">
+    <div class="show-transation-detail">
+        <label>DETALHES DA TRANSAÇÃO</label>
+    </div>
+    <div class="transaction-description">
+        <?= $movements["transation_detail"] ?>
+    </div>
+
+</div>
+
+<?php
+include_once("components/backbtn.php")
+    ?>
 <?php
 include_once("components/footer.php")
     ?>

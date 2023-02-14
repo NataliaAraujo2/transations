@@ -13,7 +13,7 @@ include_once("components/functions/functions.php")
         <?php
     endif;
     ?>
-    <h1 id="main-title">TRANSAÇÕES</h1>
+    <h1 class="main-title">TRANSAÇÕES</h1>
     <?php
     if (count($movements) > 0):
         ?>
@@ -85,8 +85,6 @@ include_once("components/functions/functions.php")
 
                         <td class="actions">
                             <a href="<?= $BASE_URL ?>show.php?id=<?= $movements["id"] ?>"><i class="fas fa-eye check-icon"></i></a>
-                            <a href="#"><i class="far fa-edit edit-icon"></i></a>
-                            <button type="submit" class="delete-btn"> <i class="fas fa-times delete-icon"></i> </button>
                         </td>
                     </tr>
                     <?php
