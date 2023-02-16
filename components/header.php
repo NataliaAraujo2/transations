@@ -30,7 +30,7 @@ if (isset($_SESSION['msg'])) {
     <header>
         <nav class="navbar-expand-lg navbar-dark bg-primary">
             <a class="navbar-brand" href="<?= $BASE_URL ?>index.php">
-                <img src="<?= $BASE_URL ?>img/logo.jpg" alt="Logo da Caixa">
+                
                 <div class="navbar-nav">
                     <a href="<?= $BASE_URL ?>index.php" class="nav-link active" id="home-link">Movimentações
                         Atípicas</a>

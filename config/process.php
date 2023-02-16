@@ -69,6 +69,7 @@ header("Location:" . $BASE_URL . "../index.php");
 
     } else {
         //Retorna todos os dados
+       
         $movements = [];
 
         $query = "SELECT * FROM movements";

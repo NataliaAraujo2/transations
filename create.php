@@ -8,13 +8,12 @@ include_once("components/header.php");
         <div class="form-group">
             <label for="personType">Tipo de Cliente:</label>
             <select class="form-control" id="personType" name="personType">
-                <option value="1">1</option>"
-                <option value="2">2</option>
+                <option value="CPF:">1</option>"
+                <option value="CNPJ:">2</option>
             </select>
             <script type="text/javascript">
                 let list = document.querySelector("#personType")
                 list.addEventListener("change", e => {
-                    if ()
                         document.querySelector("#change").innerHTML = e.target.value
                 })
 
